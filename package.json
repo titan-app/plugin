@@ -1,7 +1,7 @@
 {
 	"name": "@titan-app/remote-module",
 	"author": "titan-app",
-	"version": "0.0.1-beta.4",
+	"version": "0.0.1-beta.5",
 	"private": false,
 	"main": "dist/index.js",
 	"scripts": {
@@ -22,5 +22,9 @@
 	},
 	"peerDependencies": {
 		"vite": "^4.3.9"
+	},
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org",
+		"access": "public"
 	}
 }
