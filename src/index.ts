@@ -1,13 +1,13 @@
 import { Plugin, transformWithEsbuild } from 'vite';
 
-export interface microWebPluginParams {
+export interface RemoteModuleOption {
 	styleAppendTo?: string;
 	entry?: string;
 }
 
 const imagesRE = new RegExp(`\\.(png|webp|jpg|gif|jpeg|tiff|svg|bmp)($|\\?)`);
 
-export default function RemoteModule({ styleAppendTo = 'parentNode', entry = 'packages/index.tsx' }: microWebPluginParams): Plugin {
+export default function RemoteModule({ styleAppendTo = 'parentNode', entry = 'packages/index.tsx' }: RemoteModuleOption): Plugin {
 	return {
 		name: 'vite-plugin-remote-module',
 		config() {
