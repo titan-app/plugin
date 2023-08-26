@@ -10,12 +10,14 @@ const imagesRE = new RegExp(`\\.(png|webp|jpg|gif|jpeg|tiff|svg|bmp)($|\\?)`);
 export default function RemoteModule({ styleAppendTo = 'parentNode', entry = 'packages/index.tsx' }: RemoteModuleOption): Plugin {
 	return {
 		name: 'vite-plugin-remote-module',
-		config() {
+		config(config) {
 			return {
 				build: {
 					target: 'es2020',
 					cssCodeSplit: false,
+					...config.build,
 					rollupOptions: {
+						...config.build?.rollupOptions,
 						// 用于控制 Rollup 尝试确保入口块与基础入口模块具有相同的导出
 						preserveEntrySignatures: 'allow-extension',
 						input: entry,
@@ -34,6 +36,7 @@ export default function RemoteModule({ styleAppendTo = 'parentNode', entry = 'pa
 			return undefined;
 		},
 		async generateBundle(options, bundle) {
+			console.log('generate bundle');
 			let entry: string | undefined;
 			const cssChunks: string[] = [];
 			for (const chunkName of Object.keys(bundle)) {
