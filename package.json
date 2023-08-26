@@ -1,7 +1,7 @@
 {
 	"name": "@titan-app/remote-module",
 	"author": "titan-app",
-	"version": "0.0.1-beta.9",
+	"version": "0.0.1-beta.10",
 	"private": false,
 	"main": "dist/index.js",
 	"scripts": {
