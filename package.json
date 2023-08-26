@@ -1,0 +1,26 @@
+{
+	"name": "@titan-app/remote-module",
+	"author": "titan-app",
+	"version": "0.0.1-beta.0",
+	"private": false,
+	"main": "dist/index.js",
+	"scripts": {
+		"dev": "pnpm run build --watch --ignore-watch examples",
+		"build": "tsup src/index.ts --dts --format cjs,esm",
+		"release": "npx bumpp --push --tag --commit && pnpm publish"
+	},
+	"devDependencies": {
+		"@types/node": "^20.5.6",
+		"@typescript-eslint/eslint-plugin": "^6.4.1",
+		"@typescript-eslint/parser": "^6.4.1",
+		"bumpp": "^9.2.0",
+		"eslint": "^8.48.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"prettier": "^3.0.2",
+		"tsup": "^7.2.0"
+	},
+	"peerDependencies": {
+		"vite": "^4.3.9"
+	}
+}
