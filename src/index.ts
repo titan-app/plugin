@@ -7,7 +7,7 @@ export interface RemoteModuleOption {
 
 const imagesRE = new RegExp(`\\.(png|webp|jpg|gif|jpeg|tiff|svg|bmp)($|\\?)`);
 
-export default function RemoteModule({ styleAppendTo = 'parentNode', entry = 'packages/index.tsx' }: RemoteModuleOption): Plugin {
+export function RemoteModule({ styleAppendTo = 'parentNode', entry = 'packages/index.tsx' }: RemoteModuleOption): Plugin {
 	return {
 		name: 'vite-plugin-remote-module',
 		config(config) {
