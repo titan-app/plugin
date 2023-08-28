@@ -29,8 +29,5 @@ export function RemoteModule({ entry = 'packages/index.tsx' }: RemoteModuleOptio
 				},
 			};
 		},
-		configResolved(c) {
-			console.log(c.resolve.alias);
-		},
 	};
 }
