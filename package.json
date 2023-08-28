@@ -1,5 +1,5 @@
 {
-	"name": "@titan-app/remote-module",
+	"name": "@titan-app/plugin",
 	"author": "titan-app",
 	"version": "0.0.1-beta.17",
 	"private": false,
