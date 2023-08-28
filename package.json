@@ -1,7 +1,7 @@
 {
 	"name": "@titan-app/plugin",
 	"author": "titan-app",
-	"version": "0.0.1-beta.20",
+	"version": "0.0.1-beta.21",
 	"private": false,
 	"main": "dist/index.js",
 	"scripts": {
