@@ -1,3 +1,4 @@
+import { resolve } from 'path';
 import { Plugin } from 'vite';
 
 export interface RemoteModuleOption {
@@ -13,7 +14,7 @@ export function RemoteModule({ entry = 'packages/index.tsx' }: RemoteModuleOptio
 					cssCodeSplit: false,
 					rollupOptions: {
 						preserveEntrySignatures: 'allow-extension',
-						input: entry,
+						input: resolve(entry),
 					},
 					...config.build,
 				},
