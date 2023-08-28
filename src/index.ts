@@ -1,7 +1,6 @@
 import { Plugin } from 'vite';
 
 export interface RemoteModuleOption {
-	styleAppendTo?: string;
 	entry?: string;
 }
 
