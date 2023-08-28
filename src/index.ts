@@ -8,6 +8,7 @@ export interface RemoteModuleOption {
 export function RemoteModule({ entry = 'packages/index.tsx' }: RemoteModuleOption): Plugin {
 	return {
 		name: 'vite-plugin-remote-plugin',
+		apply: 'build',
 		config(config) {
 			return {
 				build: {
@@ -20,11 +21,16 @@ export function RemoteModule({ entry = 'packages/index.tsx' }: RemoteModuleOptio
 					},
 				},
 				resolve: {
-					...config.resolve,
-					react: 'https://esm.sh/react@18.2.0',
-					'react-dom': 'https://esm.sh/react-dom@18.2.0',
+					alias: {
+						...config.resolve?.alias,
+						react: 'https://esm.sh/react@18.2.0',
+						'react-dom': 'https://esm.sh/react-dom@18.2.0',
+					},
 				},
 			};
+		},
+		configResolved(c) {
+			console.log(c.resolve.alias);
 		},
 	};
 }
