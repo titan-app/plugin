@@ -6,7 +6,7 @@ export interface RemoteModuleOption {
 
 export function RemoteModule({ entry = 'packages/index.tsx' }: RemoteModuleOption): Plugin {
 	return {
-		name: 'vite-plugin-remote-module',
+		name: 'vite-plugin-remote-plugin',
 		config(config) {
 			return {
 				build: {
