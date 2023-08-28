@@ -11,12 +11,13 @@ export function RemoteModule({ entry = 'packages/index.tsx' }: RemoteModuleOptio
 		config(config) {
 			return {
 				build: {
+					...config.build,
 					cssCodeSplit: false,
 					rollupOptions: {
+						...config.build?.rollupOptions,
 						preserveEntrySignatures: 'allow-extension',
 						input: resolve(entry),
 					},
-					...config.build,
 				},
 				resolve: {
 					...config.resolve,
